@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with ChatGPT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Chat with ChatGPT</h1>
+    <div class="chatbox"> 
+        <!--The code below ittereates the messages and displays the user repsonse both old and new so that they can 
+        all be placed in the chat box-->
+        <div class="chatbox">   
+        {% for message in messages %}
+            <div class="message {{ message.type }}">{{ message.text }}</div>
+        {% endfor %}
+    </div>
+    </div>
+    <form method="POST">
+        <!--This allows for the button to be clicked and set off an event-->
+        <input type="text" name="user_input" placeholder="Type about the stock you want to know...">
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
